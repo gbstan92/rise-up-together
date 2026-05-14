@@ -6,6 +6,8 @@ import { TournamentCard } from "@/components/public/TournamentCard";
 import { listPublicTournaments } from "@/server/tournaments";
 import { staticAlternates } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {

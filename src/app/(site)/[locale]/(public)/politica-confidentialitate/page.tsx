@@ -5,6 +5,8 @@ import { CmsBlocks } from "@/components/blocks/CmsBlocks";
 import { getPageContent } from "@/server/pages";
 import { staticAlternates } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {

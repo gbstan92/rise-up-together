@@ -3,6 +3,8 @@ import { PublishStatus } from "@/generated/prisma/enums";
 import { prisma } from "@/lib/db";
 import { Locale } from "@/generated/prisma/enums";
 
+export const dynamic = "force-dynamic";
+
 const STATIC_PAGES: Array<{ ro: string; en: string }> = [
   { ro: "", en: "" }, // home
   { ro: "cine-suntem", en: "who-we-are" },

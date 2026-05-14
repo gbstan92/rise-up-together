@@ -12,6 +12,8 @@ import { prisma } from "@/lib/db";
 import { Locale } from "@/generated/prisma/enums";
 import { staticAlternates } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {

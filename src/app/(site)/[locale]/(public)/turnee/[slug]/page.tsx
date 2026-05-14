@@ -11,6 +11,8 @@ import { FormTeamRegistration } from "@/components/public/forms/FormTeamRegistra
 import { getPublicTournament } from "@/server/tournaments";
 import { tournamentAlternates } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {

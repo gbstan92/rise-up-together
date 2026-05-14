@@ -9,6 +9,8 @@ import { FormNewsletter } from "@/components/public/forms/FormNewsletter";
 import { getPageContent } from "@/server/pages";
 import { staticAlternates } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   params,
 }: {
