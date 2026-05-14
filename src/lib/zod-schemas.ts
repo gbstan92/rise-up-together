@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const localeEnum = z.enum(["ro", "en"]).default("ro");
+const localeEnum = z.enum(["ro", "en"]);
 
 export const volunteerSchema = z.object({
   name: z.string().min(2).max(120),
