@@ -35,7 +35,7 @@ export const teamRegistrationSchema = z.object({
   captainName: z.string().min(2).max(120),
   captainEmail: z.email(),
   captainPhone: z.string().max(40).optional().nullable(),
-  playerCount: z.coerce.number().int().min(1).max(50),
+  playerCount: z.number().int().min(1).max(50),
   notes: z.string().max(2000).optional().nullable(),
   hcaptchaToken: z.string().optional().nullable(),
   locale: localeEnum,
