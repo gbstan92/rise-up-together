@@ -2,18 +2,21 @@
 
 ## Commit cadence
 
-**Standing instruction:** after every meaningful change (file create, edit, or
-delete that leaves the working tree in a coherent state), create a git commit
-without waiting for me to ask.
+**Standing instruction:** when a logical unit of work is complete (one
+feature, one workflow phase, or one bug fix), propose a commit and wait for my
+approval before running `git commit`.
 
-- Group tightly related edits into one commit (e.g. all files touched to ship
-  one feature/fix).
-- One sentence subject in the present tense, focused on the *why*. Include a
-  short body when context isn't obvious from the diff.
-- Don't include unrelated work in the same commit; split them.
-- Never push unless I explicitly ask.
-- If the change is incomplete / known-broken, say so in the message body
-  (`WIP:` prefix is fine) — still commit.
+- **One commit per logical unit**, not per file edit. Don't commit mid-feature
+  even if intermediate states look reasonable.
+- **Always ask first.** Show me the proposed commit message and the file list;
+  let me eyeball the diff before approving.
+- **Group all related files into a single commit.** If I made multiple changes
+  while implementing one thing, they ship together.
+- **Split unrelated work.** If two things landed in the same session, propose
+  two separate commits.
+- Subject in present tense, focused on the *why*. Body when context isn't
+  obvious from the diff.
+- **Never push** unless I explicitly say so.
 
 ## Other notes
 
