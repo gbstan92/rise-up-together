@@ -1,0 +1,124 @@
+{
+  "common": {
+    "siteName": "Rise Up Together",
+    "tagline": "Împreună ridicăm comunitatea prin sport și solidaritate.",
+    "loading": "Se încarcă…",
+    "submit": "Trimite",
+    "cancel": "Anulează"
+  },
+  "nav": {
+    "home": "Acasă",
+    "whoWeAre": "Cine suntem",
+    "whatWeDo": "Ce facem",
+    "getInvolved": "Implică-te",
+    "tournaments": "Turnee"
+  },
+  "home": {
+    "heroEyebrow": "Asociație non-profit",
+    "heroTitle": "Rise Up Together",
+    "heroSubtitle": "Schimbăm vieți prin fotbal, educație și acțiune comunitară.",
+    "ctaInvolved": "Implică-te",
+    "ctaTournaments": "Vezi turneele",
+    "missionTitle": "Misiunea noastră",
+    "missionDescription": "Construim oportunități pentru tineri și familii prin sport, mentorat și parteneriate locale.",
+    "pillarsTitle": "Cum facem diferența",
+    "pillar1Title": "Sport pentru toți",
+    "pillar1Body": "Acces gratuit la antrenamente și echipamente pentru copii din comunități defavorizate.",
+    "pillar2Title": "Educație și mentorat",
+    "pillar2Body": "Programe care îmbină activitatea fizică cu sprijinul școlar și dezvoltarea personală.",
+    "pillar3Title": "Comunitate solidă",
+    "pillar3Body": "Evenimente, turnee și acțiuni care aduc oamenii împreună în jurul valorilor comune.",
+    "ctaJoinTitle": "Hai alături de noi",
+    "ctaJoinBody": "Donează, voluntariază sau sponsorizează un proiect — fiecare gest contează."
+  },
+  "whoWeAre": {
+    "title": "Cine suntem",
+    "intro": "Suntem o asociație care folosește sportul ca instrument de schimbare socială.",
+    "storyTitle": "Povestea noastră",
+    "storyBody": "Conținutul complet va fi adăugat din panoul de administrare.",
+    "valuesTitle": "Valorile noastre",
+    "value1": "Solidaritate",
+    "value2": "Respect",
+    "value3": "Curaj",
+    "teamTitle": "Echipa"
+  },
+  "whatWeDo": {
+    "title": "Ce facem",
+    "intro": "Programele noastre conectează tineri, comunități și parteneri locali.",
+    "programsTitle": "Programe",
+    "impactTitle": "Impactul nostru"
+  },
+  "getInvolved": {
+    "title": "Implică-te",
+    "intro": "Donează, voluntariază sau devino partener.",
+    "volunteer": "Voluntariat",
+    "volunteerBody": "Alătură-te echipei noastre de voluntari pentru evenimente și programe permanente.",
+    "sponsor": "Parteneri & sponsori",
+    "sponsorBody": "Sprijină programele noastre printr-un parteneriat dedicat.",
+    "newsletter": "Abonează-te la newsletter",
+    "newsletterBody": "Primește lunar noutăți, povești și invitații la evenimente.",
+    "donateTitle": "Donează",
+    "donateBody": "Conturile noastre bancare vor fi afișate aici."
+  },
+  "tournaments": {
+    "title": "Turnee",
+    "intro": "Fotbalul este motorul comunității noastre — vezi turneele anterioare și ce urmează.",
+    "upcoming": "Turnee viitoare",
+    "past": "Turnee anterioare",
+    "empty": "Nu există turnee de afișat încă."
+  },
+  "footer": {
+    "copyright": "Toate drepturile rezervate.",
+    "privacy": "Politica de confidențialitate"
+  },
+  "errors": {
+    "notFound": "Pagina nu a fost găsită."
+  },
+  "cookies": {
+    "message": "Folosim cookie-uri esențiale pentru funcționarea site-ului. Continuarea navigării înseamnă acceptul.",
+    "accept": "Am înțeles"
+  },
+  "forms": {
+    "name": "Nume",
+    "email": "Email",
+    "phone": "Telefon (opțional)",
+    "company": "Companie",
+    "contactName": "Persoană de contact",
+    "tier": "Tip parteneriat (opțional)",
+    "interests": "Cum vrei să te implici?",
+    "message": "Mesaj (opțional)",
+    "submit": "Trimite",
+    "sending": "Se trimite…",
+    "errorGeneric": "A apărut o problemă. Încearcă din nou.",
+    "errorCaptcha": "Verificarea captcha a eșuat.",
+    "errorRateLimited": "Prea multe încercări. Reîncearcă în câteva minute.",
+    "volunteer": { "success": "Mulțumim! Te vom contacta în curând." },
+    "sponsor": { "success": "Mulțumim! Revenim cu un răspuns." },
+    "newsletter": { "success": "Verifică-ți emailul ca să confirmi abonarea." }
+  },
+  "teamRegistration": {
+    "title": "Înscrie o echipă",
+    "intro": "Completează formularul pentru a participa la acest turneu.",
+    "teamName": "Numele echipei",
+    "captainName": "Căpitan / persoană de contact",
+    "playerCount": "Număr jucători",
+    "success": "Mulțumim! Înscrierea va fi verificată de organizatori.",
+    "phaseUpcoming": "Turneu viitor",
+    "phasePast": "Turneu anterior",
+    "videosTitle": "Video",
+    "galleryTitle": "Galerie",
+    "teamsTitle": "Echipe participante",
+    "resultsTitle": "Rezultate",
+    "round": "Etapă",
+    "home": "Gazdă",
+    "away": "Oaspete",
+    "score": "Scor",
+    "registerTitle": "Înscrie-ți echipa",
+    "registerIntro": "Înscrierile rămân deschise până la confirmarea organizatorilor."
+  },
+  "newsletterStatus": {
+    "confirmed": "Abonare confirmată — mulțumim!",
+    "unsubscribed": "Te-ai dezabonat. Ne pare rău că pleci.",
+    "invalid": "Link invalid sau expirat."
+  }
+}

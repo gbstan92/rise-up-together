@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+/* Brand palette derived from the Rise Up Together logo (bold scarlet red). */
+:root {
+  --background: #fffaf7;
+  --foreground: #1a0808;
+  --muted: #f6ecec;
+  --muted-foreground: #6b4f4f;
+  --border: #ecd9d9;
+  --input: #ecd9d9;
+  --ring: #c8102e;
+  --primary: #c8102e;
+  --primary-foreground: #ffffff;
+  --secondary: #f6ecec;
+  --secondary-foreground: #1a0808;
+  --accent: #fde2e4;
+  --accent-foreground: #7f1d1d;
+  --card: #ffffff;
+  --card-foreground: #1a0808;
+  --destructive: #991b1b;
+  --destructive-foreground: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #140909;
+    --foreground: #f5e9e9;
+    --muted: #2a1414;
+    --muted-foreground: #b9a0a0;
+    --border: #3a1d1d;
+    --input: #3a1d1d;
+    --ring: #ef4444;
+    --primary: #ef4444;
+    --primary-foreground: #140909;
+    --secondary: #2a1414;
+    --secondary-foreground: #f5e9e9;
+    --accent: #4c1d1d;
+    --accent-foreground: #fecaca;
+    --card: #1c0e0e;
+    --card-foreground: #f5e9e9;
+    --destructive: #ef4444;
+    --destructive-foreground: #140909;
+  }
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), Georgia, serif;
+}

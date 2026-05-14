@@ -1,0 +1,267 @@
+// Rise Up Together — Prisma schema.
+// See docs/design.md §3 for the canonical data model.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Locale {
+  RO
+  EN
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum TournamentStatus {
+  UPCOMING
+  PAST
+}
+
+enum RegistrationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum SubmissionStatus {
+  NEW
+  HANDLED
+  ARCHIVED
+}
+
+enum PageKey {
+  HOME
+  WHO_WE_ARE
+  WHAT_WE_DO
+  GET_INVOLVED
+  PRIVACY
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ---------- Static page content ----------
+
+model PageContent {
+  id           String                   @id @default(cuid())
+  key          PageKey                  @unique
+  status       PublishStatus            @default(DRAFT)
+  translations PageContentTranslation[]
+  blocks       ContentBlock[]
+  updatedAt    DateTime                 @updatedAt
+}
+
+model PageContentTranslation {
+  id       String      @id @default(cuid())
+  pageId   String
+  locale   Locale
+  title    String
+  seoTitle String?
+  seoDesc  String?
+  page     PageContent @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@unique([pageId, locale])
+}
+
+model ContentBlock {
+  id        String      @id @default(cuid())
+  pageId    String
+  sortOrder Int         @default(0)
+  kind      String
+  payload   Json
+  page      PageContent @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@index([pageId, sortOrder])
+}
+
+// ---------- Team / board ----------
+
+model TeamMember {
+  id           String                  @id @default(cuid())
+  sortOrder    Int                     @default(0)
+  photoId      String?
+  photo        MediaAsset?             @relation("TeamMemberPhoto", fields: [photoId], references: [id])
+  translations TeamMemberTranslation[]
+}
+
+model TeamMemberTranslation {
+  id       String     @id @default(cuid())
+  memberId String
+  locale   Locale
+  name     String
+  role     String
+  bio      String
+  member   TeamMember @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@unique([memberId, locale])
+}
+
+// ---------- Tournaments ----------
+
+model Tournament {
+  id               String                  @id @default(cuid())
+  status           PublishStatus           @default(DRAFT)
+  phase            TournamentStatus
+  startDate        DateTime
+  endDate          DateTime?
+  venueName        String
+  venueAddress     String
+  registrationOpen Boolean                 @default(false)
+  coverId          String?
+  cover            MediaAsset?             @relation("TournamentCover", fields: [coverId], references: [id])
+  translations     TournamentTranslation[]
+  videos           VideoEmbed[]
+  gallery          MediaAsset[]            @relation("TournamentGallery")
+  teams            TournamentTeam[]
+  results          MatchResult[]
+  registrations    TeamRegistration[]
+  createdAt        DateTime                @default(now())
+  updatedAt        DateTime                @updatedAt
+
+  @@index([phase, status, startDate])
+}
+
+model TournamentTranslation {
+  id           String     @id @default(cuid())
+  tournamentId String
+  locale       Locale
+  title        String
+  slugLocale   String
+  summary      String
+  description  Json
+  seoTitle     String?
+  seoDesc      String?
+  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+
+  @@unique([tournamentId, locale])
+  @@unique([locale, slugLocale])
+}
+
+model VideoEmbed {
+  id           String     @id @default(cuid())
+  tournamentId String
+  youtubeId    String
+  titleRo      String?
+  titleEn      String?
+  sortOrder    Int        @default(0)
+  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+
+  @@index([tournamentId, sortOrder])
+}
+
+model TournamentTeam {
+  id           String        @id @default(cuid())
+  tournamentId String
+  name         String
+  logoId       String?
+  logo         MediaAsset?   @relation("TeamLogo", fields: [logoId], references: [id])
+  sortOrder    Int           @default(0)
+  tournament   Tournament    @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  homeResults  MatchResult[] @relation("HomeTeam")
+  awayResults  MatchResult[] @relation("AwayTeam")
+
+  @@index([tournamentId])
+}
+
+model MatchResult {
+  id           String         @id @default(cuid())
+  tournamentId String
+  round        String
+  homeTeamId   String
+  awayTeamId   String
+  homeScore    Int
+  awayScore    Int
+  playedAt     DateTime?
+  tournament   Tournament     @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  homeTeam     TournamentTeam @relation("HomeTeam", fields: [homeTeamId], references: [id])
+  awayTeam     TournamentTeam @relation("AwayTeam", fields: [awayTeamId], references: [id])
+
+  @@index([tournamentId, round])
+}
+
+// ---------- Submissions ----------
+
+model VolunteerSubmission {
+  id        String           @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  interests String
+  message   String?
+  status    SubmissionStatus @default(NEW)
+  createdAt DateTime         @default(now())
+}
+
+model SponsorInquiry {
+  id          String           @id @default(cuid())
+  company     String
+  contactName String
+  email       String
+  phone       String?
+  tier        String?
+  message     String
+  status      SubmissionStatus @default(NEW)
+  createdAt   DateTime         @default(now())
+}
+
+model NewsletterSubscriber {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  locale       Locale
+  confirmed    Boolean   @default(false)
+  confirmToken String?   @unique
+  confirmedAt  DateTime?
+  unsubToken   String    @unique
+  createdAt    DateTime  @default(now())
+}
+
+model TeamRegistration {
+  id           String             @id @default(cuid())
+  tournamentId String
+  teamName     String
+  captainName  String
+  captainEmail String
+  captainPhone String?
+  playerCount  Int
+  notes        String?
+  status       RegistrationStatus @default(PENDING)
+  decidedAt    DateTime?
+  decidedById  String?
+  createdAt    DateTime           @default(now())
+  tournament   Tournament         @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+
+  @@index([tournamentId, status])
+}
+
+// ---------- Media ----------
+
+model MediaAsset {
+  id         String   @id @default(cuid())
+  storageKey String
+  variants   Json
+  width      Int
+  height     Int
+  altRo      String?
+  altEn      String?
+  createdAt  DateTime @default(now())
+
+  tournamentGallery Tournament[]     @relation("TournamentGallery")
+  tournamentCover   Tournament[]     @relation("TournamentCover")
+  teamMember        TeamMember[]     @relation("TeamMemberPhoto")
+  teamLogo          TournamentTeam[] @relation("TeamLogo")
+}

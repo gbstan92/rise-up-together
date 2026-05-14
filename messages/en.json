@@ -1,0 +1,124 @@
+{
+  "common": {
+    "siteName": "Rise Up Together",
+    "tagline": "Lifting our community through sport and solidarity.",
+    "loading": "Loading…",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "nav": {
+    "home": "Home",
+    "whoWeAre": "Who we are",
+    "whatWeDo": "What we do",
+    "getInvolved": "Get involved",
+    "tournaments": "Tournaments"
+  },
+  "home": {
+    "heroEyebrow": "Non-profit association",
+    "heroTitle": "Rise Up Together",
+    "heroSubtitle": "Changing lives through football, education and community action.",
+    "ctaInvolved": "Get involved",
+    "ctaTournaments": "See tournaments",
+    "missionTitle": "Our mission",
+    "missionDescription": "We build opportunities for young people and families through sport, mentoring and local partnerships.",
+    "pillarsTitle": "How we make a difference",
+    "pillar1Title": "Sport for everyone",
+    "pillar1Body": "Free access to training and equipment for children from underserved communities.",
+    "pillar2Title": "Education & mentoring",
+    "pillar2Body": "Programs that pair physical activity with academic support and personal growth.",
+    "pillar3Title": "A stronger community",
+    "pillar3Body": "Events, tournaments and actions that bring people together around shared values.",
+    "ctaJoinTitle": "Stand with us",
+    "ctaJoinBody": "Donate, volunteer or sponsor a project — every gesture matters."
+  },
+  "whoWeAre": {
+    "title": "Who we are",
+    "intro": "We are an association using sport as a tool for social change.",
+    "storyTitle": "Our story",
+    "storyBody": "Full content will be added from the admin dashboard.",
+    "valuesTitle": "Our values",
+    "value1": "Solidarity",
+    "value2": "Respect",
+    "value3": "Courage",
+    "teamTitle": "The team"
+  },
+  "whatWeDo": {
+    "title": "What we do",
+    "intro": "Our programs connect young people, communities and local partners.",
+    "programsTitle": "Programs",
+    "impactTitle": "Our impact"
+  },
+  "getInvolved": {
+    "title": "Get involved",
+    "intro": "Donate, volunteer or become a partner.",
+    "volunteer": "Volunteer",
+    "volunteerBody": "Join our volunteer team for events and ongoing programs.",
+    "sponsor": "Partners & sponsors",
+    "sponsorBody": "Support our programs through a dedicated partnership.",
+    "newsletter": "Subscribe to the newsletter",
+    "newsletterBody": "Get monthly stories, news and event invitations.",
+    "donateTitle": "Donate",
+    "donateBody": "Our bank account details will be displayed here."
+  },
+  "tournaments": {
+    "title": "Tournaments",
+    "intro": "Football is the engine of our community — see past tournaments and what's coming next.",
+    "upcoming": "Upcoming tournaments",
+    "past": "Past tournaments",
+    "empty": "No tournaments to show yet."
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy policy"
+  },
+  "errors": {
+    "notFound": "Page not found."
+  },
+  "cookies": {
+    "message": "We use essential cookies for the site to function. Continuing to browse implies acceptance.",
+    "accept": "Got it"
+  },
+  "forms": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "company": "Company",
+    "contactName": "Contact person",
+    "tier": "Partnership tier (optional)",
+    "interests": "How would you like to get involved?",
+    "message": "Message (optional)",
+    "submit": "Submit",
+    "sending": "Sending…",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorCaptcha": "Captcha verification failed.",
+    "errorRateLimited": "Too many attempts. Try again in a few minutes.",
+    "volunteer": { "success": "Thanks! We'll get in touch shortly." },
+    "sponsor": { "success": "Thanks! We'll get back to you soon." },
+    "newsletter": { "success": "Check your inbox to confirm your subscription." }
+  },
+  "teamRegistration": {
+    "title": "Register your team",
+    "intro": "Fill in the form to enter this tournament.",
+    "teamName": "Team name",
+    "captainName": "Captain / contact person",
+    "playerCount": "Player count",
+    "success": "Thanks! Your registration will be reviewed by the organizers.",
+    "phaseUpcoming": "Upcoming tournament",
+    "phasePast": "Past tournament",
+    "videosTitle": "Videos",
+    "galleryTitle": "Gallery",
+    "teamsTitle": "Participating teams",
+    "resultsTitle": "Results",
+    "round": "Round",
+    "home": "Home",
+    "away": "Away",
+    "score": "Score",
+    "registerTitle": "Register your team",
+    "registerIntro": "Registrations remain open until the organizers confirm the bracket."
+  },
+  "newsletterStatus": {
+    "confirmed": "Subscription confirmed — thank you!",
+    "unsubscribed": "You've been unsubscribed. Sorry to see you go.",
+    "invalid": "Invalid or expired link."
+  }
+}
