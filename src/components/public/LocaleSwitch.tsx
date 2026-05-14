@@ -15,7 +15,7 @@ export function LocaleSwitch() {
         <button
           key={l}
           type="button"
-          onClick={() => router.replace(pathname, { locale: l })}
+          onClick={() => router.replace(pathname as never, { locale: l })}
           className={
             "rounded-full px-2.5 py-1 uppercase tracking-wide " +
             (l === current
